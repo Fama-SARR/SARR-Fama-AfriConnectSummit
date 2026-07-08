@@ -1,0 +1,68 @@
+:root {
+    --color-primary: #FF6B35;
+    --color-secondary: #004E89;
+    --color-bg: #FFFFFF;
+    --color-text: #1A1A2E;
+    --font-heading: 'Sora', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --spacing-md: 1rem;
+    --radius: 8px;
+}
+
+[data-theme="dark"] {
+    --color-bg: #1A1A2E;
+    --color-text: #F1F5F9;
+}
+
+/* RESET CSS */
+/* On annule les marges/paddings par défaut du navigateur (différents selon Chrome, Firefox, etc.)
+   et on force box-sizing: border-box pour que les paddings/bordures n'agrandissent pas
+   la taille totale des éléments (plus facile à calculer en layout)  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* STYLE DE BASE DU BODY */
+/* On applique la police de texte courant et les couleurs de fond/texte
+   définies dans les variables CSS de :root.
+   La transition permet un changement en douceur lors du basculement dark/light mode  */
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* NAVBAR */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md);
+  background-color: var(--color-bg);
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-md);
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+.logo {
+  font-family: var(--font-heading);
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.theme-toggle,
+.hamburger {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
