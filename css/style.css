@@ -66,3 +66,9 @@ nav {
   font-size: 1.25rem;
   cursor: pointer;
 }
+/* RESPONSIVE - MOBILE (sous 768px)  */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+}
