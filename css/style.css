@@ -1,17 +1,17 @@
 :root {
-    --color-primary: #FF6B35;
-    --color-secondary: #004E89;
-    --color-bg: #FFFFFF;
-    --color-text: #1A1A2E;
-    --font-heading: 'Sora', sans-serif;
-    --font-body: 'Inter', sans-serif;
-    --spacing-md: 1rem;
-    --radius: 8px;
+  --color-primary: #FF6B35;
+  --color-secondary: #004E89;
+  --color-bg: #FFFFFF;
+  --color-text: #1A1A2E;
+  --font-heading: 'Sora', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --spacing-md: 1rem;
+  --radius: 8px;
 }
 
 [data-theme="dark"] {
-    --color-bg: #1A1A2E;
-    --color-text: #F1F5F9;
+  --color-bg: #1A1A2E;
+  --color-text: #F1F5F9;
 }
 
 /* RESET CSS */
@@ -19,9 +19,9 @@
    et on force box-sizing: border-box pour que les paddings/bordures n'agrandissent pas
    la taille totale des éléments (plus facile à calculer en layout)  */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* STYLE DE BASE DU BODY */
@@ -29,11 +29,12 @@
    définies dans les variables CSS de :root.
    La transition permet un changement en douceur lors du basculement dark/light mode  */
 body {
-    font-family: var(--font-body);
-    background-color: var(--color-bg);
-    color: var(--color-text);
-    transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 /* NAVBAR */
 nav {
   display: flex;
@@ -42,16 +43,19 @@ nav {
   padding: var(--spacing-md);
   background-color: var(--color-bg);
 }
+
 .nav-links {
   display: flex;
   list-style: none;
   gap: var(--spacing-md);
 }
+
 .nav-links a {
   text-decoration: none;
   color: var(--color-text);
   font-family: var(--font-body);
 }
+
 .logo {
   font-family: var(--font-heading);
   font-weight: bold;
@@ -59,6 +63,7 @@ nav {
   color: var(--color-primary);
   text-decoration: none;
 }
+
 .theme-toggle,
 .hamburger {
   background: none;
@@ -66,9 +71,80 @@ nav {
   font-size: 1.25rem;
   cursor: pointer;
 }
+
 /* RESPONSIVE - MOBILE (sous 768px)  */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
+  }
+}
+
+/*  HERO */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--spacing-md);
+  gap: var(--spacing-md);
+  animation: fadeIn 1s ease-in;
+}
+
+#hero h1 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--color-text);
+  max-width: 700px;
+}
+
+#hero p {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--color-secondary);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: bold;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+/* Animation d'apparition en fondu au chargement de la page */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
