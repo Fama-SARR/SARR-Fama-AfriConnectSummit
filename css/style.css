@@ -230,3 +230,60 @@ nav {
   color: var(--color-secondary);
   font-size: 0.95rem;
 }
+
+/*  INTERVENANTS VEDETTES */
+#intervenants {
+  padding: calc(var(--spacing-md) * 3) var(--spacing-md);
+  text-align: center;
+}
+
+#intervenants h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: calc(var(--spacing-md) * 2);
+  color: var(--color-text);
+}
+
+.speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-md);
+  max-width: 1100px;
+  margin: 0 auto calc(var(--spacing-md) * 2) auto;
+}
+
+.speaker-card {
+  background-color: var(--color-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.speaker-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.speaker-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin-top: var(--spacing-md);
+  color: var(--color-text);
+}
+
+.speaker-card p {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-secondary);
+  padding: 0 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Effet hover : la carte se soulève légèrement avec une ombre plus marquée */
+.speaker-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
