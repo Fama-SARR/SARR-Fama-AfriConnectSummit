@@ -148,6 +148,7 @@ nav {
     opacity: 1;
   }
 }
+
 /* STATS */
 #stats {
   padding: calc(var(--spacing-md) * 3) var(--spacing-md);
@@ -180,4 +181,52 @@ nav {
 .stat-item p {
   font-family: var(--font-body);
   color: var(--color-secondary);
+}
+
+/* ===== POURQUOI PARTICIPER ===== */
+#pourquoi-participer {
+  padding: calc(var(--spacing-md) * 3) var(--spacing-md);
+  text-align: center;
+}
+
+#pourquoi-participer h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: calc(var(--spacing-md) * 2);
+  color: var(--color-text);
+}
+
+.reasons-grid {
+  display: flex;
+  justify-content: center;
+  gap: calc(var(--spacing-md) * 2);
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.reason-item {
+  flex: 1;
+  min-width: 250px;
+  max-width: 320px;
+}
+
+.reason-item i {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  display: block;
+}
+
+.reason-item h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.reason-item p {
+  font-family: var(--font-body);
+  color: var(--color-secondary);
+  font-size: 0.95rem;
 }
