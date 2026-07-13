@@ -36,12 +36,21 @@ body {
 }
 
 /* NAVBAR */
-nav {
+.main-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: var(--spacing-md);
   background-color: var(--color-bg);
+}
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md);
+  background-color: var(--color-bg);
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
 }
 
 .nav-links {
@@ -446,4 +455,15 @@ footer {
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   display: none; /* caché par défaut, affiché via JavaScript après 300px de scroll */
+}
+/*FIL D'ARIANE*/
+.breadcrumb {
+  padding: var(--spacing-md);
+  font-size: 0.9rem;
+  color: var(--color-secondary);
+}
+
+.breadcrumb a {
+  color: var(--color-primary);
+  text-decoration: none;
 }
