@@ -43,6 +43,7 @@ body {
   padding: var(--spacing-md);
   background-color: var(--color-bg);
 }
+
 .main-nav {
   display: flex;
   align-items: center;
@@ -146,6 +147,7 @@ body {
   transform: translateY(-3px);
   opacity: 0.9;
 }
+
 #hero {
   min-height: 100vh;
   display: flex;
@@ -156,23 +158,26 @@ body {
   padding: var(--spacing-md);
   gap: var(--spacing-md);
   animation: fadeIn 1s ease-in;
-  
+
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/hero-bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+
 #hero h1 {
   font-family: var(--font-heading);
   font-size: 2.5rem;
-  color: #FFFFFF;  /* changé en blanc */
+  color: #FFFFFF;
+  /* changé en blanc */
   max-width: 700px;
 }
 
 #hero p {
   font-family: var(--font-body);
   font-size: 1.1rem;
-  color: #F1F5F9;  /* changé en gris très clair */
+  color: #F1F5F9;
+  /* changé en gris très clair */
 }
 
 /* Animation d'apparition en fondu au chargement de la page */
@@ -383,6 +388,7 @@ body {
   font-size: 0.85rem;
   border-color: #CD7F32;
 }
+
 /* FOOTER*/
 footer {
   background-color: var(--color-text);
@@ -454,8 +460,10 @@ footer {
   font-size: 1.2rem;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  display: none; /* caché par défaut, affiché via JavaScript après 300px de scroll */
+  display: none;
+  /* caché par défaut, affiché via JavaScript après 300px de scroll */
 }
+
 /*FIL D'ARIANE*/
 .breadcrumb {
   padding: var(--spacing-md);
@@ -466,4 +474,87 @@ footer {
 .breadcrumb a {
   color: var(--color-primary);
   text-decoration: none;
+}
+
+/* HERO INTERNE */
+#hero-interne {
+  padding: calc(var(--spacing-md) * 3) var(--spacing-md) var(--spacing-md);
+  text-align: left;
+}
+
+#hero-interne h1 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--color-text);
+  margin-top: var(--spacing-md);
+}
+
+/* ===== ONGLETS PROGRAMME ===== */
+#onglets-jours {
+  padding: var(--spacing-md) var(--spacing-md) calc(var(--spacing-md) * 3);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#onglets-jours h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.tabs-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-bottom: calc(var(--spacing-md) * 2);
+}
+
+.tab-btn {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--color-primary);
+  background-color: transparent;
+  color: var(--color-primary);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* L'onglet actif a un fond plein */
+.tab-btn.active {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+/* Cache les tableaux non actifs */
+.hidden {
+  display: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+}
+
+thead {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  text-align: left;
+}
+
+/* Alternance de couleurs sur les lignes */
+tbody tr:nth-child(even) {
+  background-color: rgba(0, 78, 137, 0.05);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #FFFFFF;
 }
