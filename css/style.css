@@ -558,3 +558,58 @@ tbody tr:nth-child(even) {
 tbody tr:nth-child(odd) {
   background-color: #FFFFFF;
 }
+
+/* THÉMATIQUES */
+#thematiques {
+  padding: calc(var(--spacing-md) * 3) var(--spacing-md);
+  text-align: center;
+}
+
+#thematiques h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: calc(var(--spacing-md) * 2);
+  color: var(--color-text);
+}
+
+.themes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: calc(var(--spacing-md) * 1.5);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.theme-card {
+  background-color: var(--color-bg);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius);
+  padding: calc(var(--spacing-md) * 1.5);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theme-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.theme-card i {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+  display: block;
+}
+
+.theme-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.theme-card p {
+  font-family: var(--font-body);
+  color: var(--color-secondary);
+  font-size: 0.9rem;
+}
