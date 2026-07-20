@@ -613,7 +613,8 @@ tbody tr:nth-child(odd) {
   color: var(--color-secondary);
   font-size: 0.9rem;
 }
-/* ===== FILTRES INTERVENANTS ===== */
+
+/* FILTRES INTERVENANTS */
 #filtres {
   padding: var(--spacing-md) var(--spacing-md) 0;
   text-align: center;
@@ -709,4 +710,97 @@ tbody tr:nth-child(odd) {
   .speakers-grid-full {
     grid-template-columns: 1fr;
   }
+}
+
+/* FORMULAIRE */
+#formulaire {
+  padding: calc(var(--spacing-md) * 2) var(--spacing-md) calc(var(--spacing-md) * 3);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.form-container {
+  display: flex;
+  gap: calc(var(--spacing-md) * 2);
+  flex-wrap: wrap;
+}
+
+#registration-form {
+  flex: 2;
+  min-width: 300px;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 250px;
+  background-color: rgba(0, 78, 137, 0.05);
+  padding: var(--spacing-md);
+  border-radius: var(--radius);
+  height: fit-content;
+}
+
+.contact-info h3 {
+  font-family: var(--font-heading);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text);
+}
+
+.contact-info p {
+  font-family: var(--font-body);
+  margin-bottom: var(--spacing-md);
+  color: var(--color-secondary);
+}
+
+.contact-info i {
+  color: var(--color-primary);
+  margin-right: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-family: var(--font-body);
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  color: var(--color-text);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.6rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+.error-message {
+  color: #DC2626;
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+  min-height: 1rem;
+}
+
+.success-message {
+  color: #16A34A;
+  font-weight: bold;
+  margin-top: var(--spacing-md);
+}
+
+/* Bordure verte/rouge selon validation (classes ajoutées par le futur JS) */
+.form-group input.valid,
+.form-group select.valid,
+.form-group textarea.valid {
+  border-color: #16A34A;
+}
+
+.form-group input.invalid,
+.form-group select.invalid,
+.form-group textarea.invalid {
+  border-color: #DC2626;
 }
