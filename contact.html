@@ -39,7 +39,75 @@
         </section>
 
         <section id="formulaire">
-            
+            <div class="form-container">
+                <form id="registration-form">
+                    <div class="form-group">
+                        <label for="fullname">Nom complet</label>
+                        <input type="text" id="fullname" name="fullname" required>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Téléphone</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="participation-type">Type de participation</label>
+                        <select id="participation-type" name="participation-type" required>
+                            <option value="">-- Choisissez --</option>
+                            <option value="participant">Participant</option>
+                            <option value="intervenant">Intervenant</option>
+                            <option value="sponsor">Sponsor</option>
+                            <option value="presse">Presse</option>
+                        </select>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country">Pays</label>
+                        <select id="country" name="country" required>
+                            <option value="">-- Choisissez --</option>
+                            <option value="senegal">Sénégal</option>
+                            <option value="mali">Mali</option>
+                            <option value="ghana">Ghana</option>
+                            <option value="maroc">Maroc</option>
+                            <option value="cote-ivoire">Côte d'Ivoire</option>
+                            <option value="kenya">Kenya</option>
+                            <option value="nigeria">Nigeria</option>
+                            <option value="burkina-faso">Burkina Faso</option>
+                            <option value="cameroun">Cameroun</option>
+                            <option value="tunisie">Tunisie</option>
+                            <option value="rwanda">Rwanda</option>
+                            <option value="benin">Bénin</option>
+                        </select>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message / Motivation</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Envoyer ma demande</button>
+                    <p class="success-message"></p>
+                </form>
+
+                <div class="contact-info">
+                    <h3>Informations pratiques</h3>
+                    <p><i class="bi bi-envelope"></i> contact@africonnectsummit.com</p>
+                    <p><i class="bi bi-telephone"></i> +221 77 123 45 67</p>
+                    <p><i class="bi bi-geo-alt"></i> Centre International de Conférences Abdou Diouf, Dakar, Sénégal</p>
+                </div>
+            </div>
 
         </section>
 
