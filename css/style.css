@@ -804,3 +804,69 @@ tbody tr:nth-child(odd) {
 .form-group textarea.invalid {
   border-color: #DC2626;
 }
+/* FAQ ACCORDÉON (CSS PUR) */
+#faq {
+  padding: calc(var(--spacing-md) * 3) var(--spacing-md);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#faq h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: calc(var(--spacing-md) * 2);
+  color: var(--color-text);
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.5rem;
+}
+
+/* On cache complètement la checkbox, elle ne sert qu'à retenir l'état */
+.faq-toggle {
+  display: none;
+}
+
+.faq-question {
+  display: block;
+  padding: var(--spacing-md) 0;
+  font-family: var(--font-body);
+  font-weight: bold;
+  color: var(--color-text);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Petite flèche qui indique l'état ouvert/fermé, via ::after */
+.faq-question::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+}
+
+/* La réponse est cachée par défaut (hauteur à 0) */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-answer p {
+  padding-bottom: var(--spacing-md);
+  color: var(--color-secondary);
+  font-family: var(--font-body);
+}
+
+/* LA RÈGLE CLÉ : quand la checkbox est cochée, on affiche la réponse juste après */
+.faq-toggle:checked ~ .faq-answer {
+  max-height: 300px;
+}
+
+/* Quand ouvert, la flèche devient un "-" */
+.faq-toggle:checked ~ .faq-question::after {
+  content: "−";
+}
