@@ -868,5 +868,9 @@ tbody tr:nth-child(odd) {
 
 /* Quand ouvert, la flèche devient un "-" */
 .faq-toggle:checked ~ .faq-question::after {
-  content: "−";
+  content: "-";
+}
+.map-frame {
+  width: 100%;
+  border: 0;
 }
