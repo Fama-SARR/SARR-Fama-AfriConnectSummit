@@ -391,7 +391,7 @@ body {
 
 /* FOOTER*/
 footer {
-  background-color: var(--color-text);
+  background-color: #1A1A2E;
   color: #FFFFFF;
   padding: calc(var(--spacing-md) * 2) var(--spacing-md);
   display: flex;
@@ -548,11 +548,12 @@ th,
 td {
   padding: 0.75rem;
   text-align: left;
+  color:#1A1A2E;
 }
 
 /* Alternance de couleurs sur les lignes */
 tbody tr:nth-child(even) {
-  background-color: rgba(0, 78, 137, 0.05);
+  background-color:#F0F4F8  ;
 }
 
 tbody tr:nth-child(odd) {
