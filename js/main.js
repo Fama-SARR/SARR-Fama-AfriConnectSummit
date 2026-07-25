@@ -21,3 +21,26 @@ const savedTheme = localStorage.getItem("theme");
 if (savedTheme === "dark") {
     htmlElement.setAttribute("data-theme", "dark");
 }
+//  BOUTON RETOUR EN HAUT 
+// On récupère le bouton dans le footer
+const backToTopButton = document.getElementById("back-to-top");
+// On surveille le défilement de la page
+window.addEventListener("scroll", function () {
+    // Si on a défilé de plus de 300px vers le bas...
+    if (window.scrollY > 300) {
+        // ...on affiche le bouton
+        backToTopButton.style.display = "block";
+    } else {
+        // ...sinon, on le cache
+        backToTopButton.style.display = "none";
+    }
+});
+
+// Quand on clique sur le bouton...
+backToTopButton.addEventListener("click", function () {
+    // ...on remonte en douceur tout en haut de la page
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
