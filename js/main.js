@@ -45,10 +45,32 @@ window.onscroll = function () {
     }
 
     if (window.scrollY > 300) {
- 
+
         backToTopButton.style.display = "block";
     } else {
-  
+
         backToTopButton.style.display = "none";
     }
 };
+// ONGLETS DU PROGRAMME
+const tabButtons = document.querySelectorAll(".tab-btn");
+const tabContents = document.querySelectorAll(".tab-content");
+
+for (let i = 0; i < tabButtons.length; i++) {
+    tabButtons[i].addEventListener("click", function () {
+        // On enlève "active" de tous les boutons, et "hidden" est ajouté à tous les contenus
+        for (let j = 0; j < tabButtons.length; j++) {
+            tabButtons[j].classList.remove("active");
+        }
+        for (let j = 0; j < tabContents.length; j++) {
+            tabContents[j].classList.add("hidden");
+        }
+
+        // On active seulement le bouton cliqué
+        tabButtons[i].classList.add("active");
+
+        // On affiche seulement le contenu correspondant (grâce à data-day)
+        const dayId = tabButtons[i].getAttribute("data-day");
+        document.getElementById(dayId).classList.remove("hidden");
+    });
+}
