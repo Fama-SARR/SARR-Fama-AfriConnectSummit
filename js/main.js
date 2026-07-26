@@ -74,3 +74,31 @@ for (let i = 0; i < tabButtons.length; i++) {
         document.getElementById(dayId).classList.remove("hidden");
     });
 }
+// ===== FILTRAGE DES INTERVENANTS =====
+const filterButtons = document.querySelectorAll(".filter-btn");
+const speakerCards = document.querySelectorAll(".speaker-card-full");
+
+for (let i = 0; i < filterButtons.length; i++) {
+    filterButtons[i].addEventListener("click", function () {
+        // On enlève "active" de tous les boutons de filtre
+        for (let j = 0; j < filterButtons.length; j++) {
+            filterButtons[j].classList.remove("active");
+        }
+        // On active le bouton cliqué
+        filterButtons[i].classList.add("active");
+
+        // On récupère la catégorie choisie (ex: "ia-tech", "business", ou "tous")
+        const selectedCategory = filterButtons[i].getAttribute("data-filter");
+
+        // On regarde chaque carte intervenant
+        for (let j = 0; j < speakerCards.length; j++) {
+            const cardCategory = speakerCards[j].getAttribute("data-category");
+
+            if (selectedCategory === "tous" || cardCategory === selectedCategory) {
+                speakerCards[j].classList.remove("hidden");
+            } else {
+                speakerCards[j].classList.add("hidden");
+            }
+        }
+    });
+}
