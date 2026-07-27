@@ -220,3 +220,69 @@ if (registrationForm) {
         }
     });
 }
+// ===== COMPTEURS ANIMÉS DES STATS =====
+const statNumbers = document.querySelectorAll(".stat-number");
+let statsAlreadyAnimated = false;
+
+window.addEventListener("scroll", function () {
+    const statsSection = document.getElementById("stats");
+    if (!statsSection) return;
+
+    const sectionPosition = statsSection.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
+
+    if (sectionPosition < screenHeight && !statsAlreadyAnimated) {
+        statsAlreadyAnimated = true;
+
+        for (let i = 0; i < statNumbers.length; i++) {
+            const target = parseInt(statNumbers[i].getAttribute("data-target"));
+            let current = 0;
+            const increment = target / 60;
+
+            const counterInterval = setInterval(function () {
+                current += increment;
+                if (current >= target) {
+                    statNumbers[i].textContent = target;
+                    clearInterval(counterInterval);
+                } else {
+                    statNumbers[i].textContent = Math.floor(current);
+                }
+            }, 20);
+        }
+    }
+});
+
+// ===== COMPTE À REBOURS DU HERO =====
+const countdownElement = document.getElementById("countdown");
+
+if (countdownElement) {
+    const eventDate = new Date("2026-11-10T09:00:00").getTime();
+
+    setInterval(function () {
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownElement.textContent = days + "j " + hours + "h " + minutes + "m " + seconds + "s";
+    }, 1000);
+}
+
+// ===== ANIMATIONS AU SCROLL (IntersectionObserver) =====
+const sectionsToAnimate = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(function (entries) {
+    for (let i = 0; i < entries.length; i++) {
+        if (entries[i].isIntersecting) {
+            entries[i].target.classList.add("visible");
+        }
+    }
+}, { threshold: 0.2 });
+
+for (let i = 0; i < sectionsToAnimate.length; i++) {
+    sectionsToAnimate[i].classList.add("fade-in-section");
+    observer.observe(sectionsToAnimate[i]);
+}
